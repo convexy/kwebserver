@@ -1,6 +1,7 @@
 import http.server
 import time
 
+
 DOCUMENT_ROOT = "./htdocs/"
 STOP_KWS = "./stop_kws"
 
