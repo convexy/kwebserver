@@ -10,9 +10,7 @@ var server = http.createServer();
 const DOCUMENT_ROOT = __dirname + "/htdocs";
 
 server.on("request", function(req, res) {
-  console.log("<http>");
-  console.log("Method: ", req.method);
-  console.log("URL: ", req.url);
+  console.log("[Timestamp]", (new Date()).toString(), "[Method]", req.method, "[URL]", req.url);
   
   let url = req.url;
   url = url.slice(-1) == "/" ? url + "index.html" : url;
