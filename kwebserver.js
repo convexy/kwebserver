@@ -10,7 +10,23 @@ var server = http.createServer();
 const DOCUMENT_ROOT = __dirname + "/htdocs";
 
 server.on("request", function(req, res) {
-  console.log("[Timestamp]", (new Date()).toString(), "[Method]", req.method, "[URL]", req.url);
+  let now = new Date();
+  let ts = "";
+  ts += now.getFullYear();
+  ts += "/";
+  ts += ("0" + (now.getMonth() + 1)).slice(-2);
+  ts += "/";
+  ts += ("0" + now.getDate()).slice(-2);
+  ts += " ";
+  ts += ("0" + now.getHours()).slice(-2);
+  ts += ":";
+  ts += ("0" + now.getHours()).slice(-2);
+  ts += ":";
+  ts += ("0" + now.getMinutes()).slice(-2);
+  ts += ":";
+  ts += ("0" + now.getSeconds()).slice(-2);
+
+  console.log("[Timestamp]", ts, "[Method]", req.method, "[URL]", req.url);
   
   let url = req.url;
   url = url.slice(-1) == "/" ? url + "index.html" : url;
